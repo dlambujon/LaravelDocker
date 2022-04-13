@@ -1,0 +1,112 @@
+version: '3.4'
+services:
+  proxy:
+    build: ./proxy
+    container_name: proxy
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - type: bind
+        source: ./proxy/nginx.conf
+        target: /etc/nginx/conf.d/nginx.conf
+      - type: bind
+        source: ./proxy/certs
+        target: /etc/nginx/certs
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+
+  petsidph:
+    build: ./php-common
+    container_name: php-petsidph
+    working_dir: /target/path
+    environment:
+      - VIRTUAL_HOST=petsidph.com
+    volumes:
+      - type: bind
+        source: ./data/petsidph
+        target: /var/www/html/petsidph
+      - type: bind
+        source: ./php-common/petsidph.conf
+        target: /etc/apache2/apache2.conf
+      - type: bind
+        source: ./php-common/php.ini
+        target: /usr/local/etc/php/php.ini
+
+  foo:
+    build: ./php-common
+    container_name: php-foo
+    working_dir: /target/path
+    environment:
+      - VIRTUAL_HOST=foo.foo.com
+    volumes:
+      - type: bind
+        source: ./data/foo
+        target: /var/www/html/foo
+      - type: bind
+        source: ./php-common/foo.conf
+        target: /etc/apache2/apache2.conf
+      - type: bind
+        source: ./php-common/php.ini
+        target: /usr/local/etc/php/php.ini
+
+  petsidph_composer:
+    build: ./composer
+    container_name: petsidph_composer
+    working_dir: /data/petsidph
+    restart: 'no'
+    volumes:
+      - type: bind
+        source: ./data/petsidph
+        target: /data/petsidph
+
+  foo_composer:
+    build: ./composer
+    container_name: foo_composer
+    working_dir: /data/foo
+    restart: 'no'
+    volumes:
+      - type: bind
+        source: ./data/foo
+        target: /data/foo
+
+  petsidph_yarn:
+    build: ./yarn
+    container_name: petsidph_yarn
+    working_dir: /data/petsidph
+    restart: 'no'
+    volumes:
+      - type: bind
+        source: ./data/petsidph
+        target: /data/petsidph
+
+  foo_yarn:
+    build: ./yarn
+    container_name: foo_yarn
+    working_dir: /data/foo
+    restart: 'no'
+    volumes:
+      - type: bind
+        source: ./data/foo
+        target: /data/foo
+
+  mysql:
+    build: ./mysql
+    container_name: mysql
+    volumes:
+      - dbdata:/var/lib/mysql
+      - type: bind
+        source: ./data/Petsidph
+        target: /var/www/html/petsidph
+#      - type: bind
+#        source: ./data/ExecutionReport
+#        target: /var/www/html/ereport
+    environment:
+      - "MYSQL_DATABASE=homestead"
+      - "MYSQL_USER=homestead"
+      - "MYSQL_PASSWORD=root"
+      - "MYSQL_ROOT_PASSWORD=root"
+    ports:
+      - "3306:3306"
+
+volumes:
+  dbdata:
