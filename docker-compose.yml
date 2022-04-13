@@ -23,7 +23,7 @@ services:
       - VIRTUAL_HOST=petsidph.com
     volumes:
       - type: bind
-        source: ./data/petsidph
+        source: ./src/petsidph
         target: /var/www/html/petsidph
       - type: bind
         source: ./php-common/petsidph.conf
@@ -40,7 +40,7 @@ services:
       - VIRTUAL_HOST=foo.foo.com
     volumes:
       - type: bind
-        source: ./data/foo
+        source: ./src/foo
         target: /var/www/html/foo
       - type: bind
         source: ./php-common/foo.conf
@@ -52,42 +52,42 @@ services:
   petsidph_composer:
     build: ./composer
     container_name: petsidph_composer
-    working_dir: /data/petsidph
+    working_dir: /src/petsidph
     restart: 'no'
     volumes:
       - type: bind
-        source: ./data/petsidph
-        target: /data/petsidph
+        source: ./src/petsidph
+        target: /src/petsidph
 
   foo_composer:
     build: ./composer
     container_name: foo_composer
-    working_dir: /data/foo
+    working_dir: /src/foo
     restart: 'no'
     volumes:
       - type: bind
-        source: ./data/foo
-        target: /data/foo
+        source: ./src/foo
+        target: /src/foo
 
   petsidph_yarn:
     build: ./yarn
     container_name: petsidph_yarn
-    working_dir: /data/petsidph
+    working_dir: /src/petsidph
     restart: 'no'
     volumes:
       - type: bind
-        source: ./data/petsidph
-        target: /data/petsidph
+        source: ./src/petsidph
+        target: /src/petsidph
 
   foo_yarn:
     build: ./yarn
     container_name: foo_yarn
-    working_dir: /data/foo
+    working_dir: /src/foo
     restart: 'no'
     volumes:
       - type: bind
-        source: ./data/foo
-        target: /data/foo
+        source: ./src/foo
+        target: /src/foo
 
   mysql:
     build: ./mysql
@@ -95,10 +95,10 @@ services:
     volumes:
       - dbdata:/var/lib/mysql
       - type: bind
-        source: ./data/Petsidph
+        source: ./src/petsidph
         target: /var/www/html/petsidph
 #      - type: bind
-#        source: ./data/Foo
+#        source: ./src/Foo
 #        target: /var/www/html/foo
     environment:
       - "MYSQL_DATABASE=homestead"
