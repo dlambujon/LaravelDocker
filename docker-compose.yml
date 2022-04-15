@@ -20,7 +20,7 @@ services:
     container_name: php-petsidph
     working_dir: /target/path
     environment:
-      - VIRTUAL_HOST=petsidph.com
+      - VIRTUAL_HOST=petsidph.com.ph
     volumes:
       - type: bind
         source: ./src/petsidph
