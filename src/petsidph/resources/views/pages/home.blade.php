@@ -14,8 +14,8 @@
                         <div class="text-white text-center">
                             <!-- <h1 class="mb-3">Pets ID PH</h1>
                             <h3 class="mb-4">Travelling Doggo?<br> Im Vaaxed! Check Online!-->
-                            <a class="btn btn-outline-light btn-lg m-2" href="{{ 'login' }}" role="button" rel="nofollow">Login</a>
-                            <a class="btn btn-outline-light btn-lg m-2" href="{{ 'register' }}" role="button">Register</a>
+                            <a class="btn btn-outline-light btn-lg m-2" href="{{ url('user/login') }}" role="button" rel="nofollow">Login</a>
+                            <a class="btn btn-outline-light btn-lg m-2" href="{{ url('user/register') }}" role="button">Register</a>
                         </div>
                     </div>
                 </div>
@@ -27,8 +27,8 @@
                             <!-- <h2>You can place here any content</h2> -->
                             <h1 class="mb-3">Pets ID PH</h1>
                             <h5 class="mb-4">Are your pets mall ready?</h5>
-                            <a class="btn btn-outline-light btn-lg m-2" href="{{ 'login' }}" role="button" rel="nofollow">Login</a>
-                            <a class="btn btn-outline-light btn-lg m-2" href="{{ 'register' }}" role="button">Register</a>
+                            <a class="btn btn-outline-light btn-lg m-2" href="{{ url('user/login') }}" role="button" rel="nofollow">Login</a>
+                            <a class="btn btn-outline-light btn-lg m-2" href="{{ url('user/register') }}" role="button">Register</a>
                         </div>
                     </div>
                 </div>
@@ -39,8 +39,8 @@
                         <div class="text-white text-center">
                             <h1 class="mb-3">Pets ID PH</h1>
                             <h3 class="mb-4">Your Fur Momma is looking for you!</h3>
-                            <a class="btn btn-outline-light btn-lg m-2" href="{{ 'login' }}" role="button" rel="nofollow">Login</a>
-                            <a class="btn btn-outline-light btn-lg m-2" href="{{ 'register' }}" role="button">Register</a>
+                            <a class="btn btn-outline-light btn-lg m-2" href="{{ url('user/login') }}" role="button" rel="nofollow">Login</a>
+                            <a class="btn btn-outline-light btn-lg m-2" href="{{ url('user/register') }}" role="button">Register</a>
                         </div>
                     </div>
                 </div>

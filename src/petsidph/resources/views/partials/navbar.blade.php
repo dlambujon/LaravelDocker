@@ -5,7 +5,7 @@
             <i class="fas fa-bars"></i>
         </button>
         <!-- Brand -->
-        <a class="navbar-brand" href="{{ '/' }}">
+        <a class="navbar-brand" href="{{ url('/') }}">
             <img src="{{ asset('images/navLogo.png') }}" height="30" alt="" loading="lazy" />
             <img src="{{ asset('images/textPetsId.png') }}" height="30" alt="" loading="lazy" />
             <!-- <strong>Pets ID</strong> -->
@@ -17,7 +17,7 @@
                 <!-- Search form -->
                 <form class="d-md-flex input-group w-auto my-auto">
                     <span class="input-group-text border-0">
-                        <a href="{{ 'search' }}" class="btn btn-warning btn-sm" style="background-color: rgba(0, 0, 0, 0.2);" data-attach-loading>Search</a>
+                        <a href="{{ url('search') }}" class="btn btn-warning btn-sm" style="background-color: rgba(0, 0, 0, 0.2);" data-attach-loading>Search</a>
                     </span>
                 </form>
             </li>
@@ -68,11 +68,11 @@
                     <img src={{ asset('images/avatar.png') }} class="rounded-circle" height="22" alt="Avatar" loading="lazy" />
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item" href="{{ 'profile' }}">My profile</a></li>
-                    <li><a class="dropdown-item" href="{{ 'settings' }}">Settings</a></li>
-                    <li><a class="dropdown-item" href="{{ 'logout' }}">Logout</a></li>
-                    <li><a class="dropdown-item" href="{{ 'register' }}">Register</a></li>
-                    <li><a class="dropdown-item" href="{{ 'login' }}">Login</a></li>
+                    <li><a class="dropdown-item" href="{{ url('user/profile') }}">My profile</a></li>
+                    <li><a class="dropdown-item" href="{{ url('user/settings') }}">Settings</a></li>
+                    <li><a class="dropdown-item" href="{{ url('user/logout') }}">Logout</a></li>
+                    <li><a class="dropdown-item" href="{{ url('user/register') }}">Register</a></li>
+                    <li><a class="dropdown-item" href="{{ url('user/login') }}">Login</a></li>
                 </ul>
             </li>
         </ul>
