@@ -78,7 +78,7 @@
                                     <!-- Success message -->
                                     <div class="alert" id="message" style="display:none"></div>
                                     <!-- Submit button -->
-                                    <button type="submit" id="btnRegister" class="btn btn-primary btn-block mb-4">Register</button>
+                                    <button type="submit" id="btnRegister" class="btn btn-primary btn-block mb-4" onclick="ajaxPost(event)">Register</button>
                                 </div>
                             </form>
                             <!-- Social media accounts -->
@@ -107,8 +107,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
     </script>
     <script type="text/javascript">
-        $("#btnRegister").click(function(e){
-            e.preventDefault();
+        function ajaxPost(event){
+            event.preventDefault();
             $.ajax({
                 url: '{{ url('/user/create') }}',
                 method:'POST',
@@ -135,7 +135,7 @@
                     });
                 },
             });
-        });
+        }
 
         picture.onchange = evt => {
             const [file] = picture.files
