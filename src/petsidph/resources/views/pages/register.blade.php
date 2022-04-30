@@ -12,11 +12,7 @@
                 margin-top: -58.59px;
             }
         }
-        .navbar .nav-link {
-            color: #fff !important;
-        }
     </style>
-
     <div id="intro" class="bg-image shadow-2-strong">
         <div class="mask d-flex align-items-center" style="background-color: rgba(0, 0, 0, 0.5);">
             <div class="container">
@@ -103,9 +99,7 @@
             </div>
         </div>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
-    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"/>
     <script type="text/javascript">
         $("#btnRegister").click(function(e){
             e.preventDefault();

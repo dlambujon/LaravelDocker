@@ -6,20 +6,9 @@ use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\View\View;
 
 class UserController extends Controller
 {
-    public function login(): View
-    {
-        return view('pages.login');
-    }
-
-    public function register(): View
-    {
-        return view('pages.register');
-    }
-
     public function create(Request $request): JsonResponse
     {
         $request->validate([

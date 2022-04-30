@@ -12,9 +12,6 @@
                 margin-top: -58.59px;
             }
         }
-        .navbar .nav-link {
-            color: #fff !important;
-        }
     </style>
     <div id="intro" class="bg-image shadow-2-strong">
         <div class="mask d-flex align-items-center h-100" style="background-color: rgba(0, 0, 0, 0.5);">

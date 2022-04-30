@@ -18,50 +18,6 @@
         <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/mdb.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
-
-        <style>
-            /* Carousel styling */
-            #introCarousel,
-            .carousel-inner,
-            .carousel-item,
-            .carousel-item.active {
-                height: 100vh;
-            }
-            .carousel-item:nth-child(1) {
-                background-image: url('{{ asset('images/home-images/petidph_banner1.jpg') }}');
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center center;
-                height: 100vh;
-            }
-            .carousel-item:nth-child(2) {
-                background-image: url('{{ asset('images/home-images/petidph_banner1.jpg') }}');
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center center;
-            }
-            .carousel-item:nth-child(3) {
-                background-image: url('{{ asset('images/home-images/petidph_banner1.jpg') }}');
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center center;
-            }
-            /* Height for devices larger than 576px */
-            @media (min-width: 992px) {
-                #introCarousel {
-                    margin-top: -58.59px;
-                }
-            }
-            .navbar .nav-link {
-                color: #fff !important;
-            }
-            .flex-container {
-                display: flex;
-            }
-            .flex-child {
-                flex: 1;
-            }
-        </style>
     </head>
     <body oncontextmenu="return false;">
         @include('partials.sidebar')

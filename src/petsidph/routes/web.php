@@ -13,8 +13,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HomeController@index');
-Route::get('/user/login', 'UserController@login');
-Route::get('/user/register', 'UserController@register');
+Route::get('/', function () {
+    return view('pages.home');
+});
+Route::get('/services', function () {
+    return view('pages.services');
+});
+Route::get('/about-us', function () {
+    return view('pages.about-us');
+});
+Route::get('/contact-us', function () {
+    return view('pages.contact-us');
+});
+Route::get('/user/login', function () {
+    return view('pages.login');
+});
+Route::get('/user/register', function () {
+    return view('pages.register');
+});
+
 Route::post('/user/create', 'UserController@create');
 
